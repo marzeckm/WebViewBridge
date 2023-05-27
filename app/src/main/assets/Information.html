@@ -1,0 +1,68 @@
+<html>
+<head>
+    <title>Informationen</title>
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1">
+    <script src="sources/js/Allgemein.js"></script>
+    <script src="sources/js/hammer.min.js"></script>
+    <link id="cssMainId" href="sources/css/bachelorarbeit.css" rel="stylesheet">
+</head>
+<body id="body" class="colorBG">
+  <div class="content">
+      <div class="bgImage">
+        <img src="sources/bilder/undraw_access_account_99n5.svg" alt="ICON" width="60%">
+        <h3 class="colorHeaders" style="text-align: center; margin: 5px;">Informationen</h3>
+      </div>
+
+      <h4 class="colorHeaders" style="margin-bottom: 0px;">Allgemeine Informationen</h4>
+      <a class="colorButtons bigButton colorText" style="width: 100%; text-align: justify; word-wrap: break-word;">
+        <b class="colorButtonHeader">Informationen</b>
+        <p><span class="text">Bei diese App handelt es sich um das Präsentationsmaterial einer Bachelorarbeit. Die Bachelorarbeit beschäftigt sich mit dem Thema "Entwicklung eines Frameworks: Für die Kommunikation und den Datenaustausch zwischen WebView und nativem Code. Ziel der Bachelorarbeit war es, die Entwicklung moderner Smartphone-Apps zu erleichtern und so die Entwicklung einem weiteren Publikum zugänglich zu machen, ohne jedoch dabei von Beschränkungen geplagt zu sein.</span></p>
+        <p><span class="text">Dabei wurden zunächst die aktuellen Ansätze der Web-Entwicklung analysiert und die Probleme und Vorteile dieser gegenübergestellt. Gegenstand dieser Analyse sind die "Native App"-, "Web-App"- und "Progressive Web-App"-Entwicklung. Der logischste Ansatz war nun ein Framework für sogenannte Hybrid-Apps zu schaffen. Hier soll versucht werden, möglichst viele der Vorteile der einzelnen Methoden zu erhalten und ihre Nachteile zu reduzieren. Desweiteren half bei der Anforderungsanalyse ein Expertengespräch mit der Mediengestalterin des betreuenden Unternehmens.</span></p>
+        <p><span class="text">Anschließend wurde das Framework prototypisch umgesetzt. Hauptbestandteil ist die sogenannte "Java-Hauptklasse". Hierbei handelt es sich um eine Brücke, welche die Datenübertragung aus nativem Java-Code in Web-View-JavaScript-Code (und anderherum) und die Kommunikation zwischen diesen ermöglicht. Die beinhaltet auch eine Reihe Funktionen, welche die App-Entwicklung erleichtern soll.</span></p>
+        <p><span class="text">Diese App beinhaltet nur einen Bruchteil der Funktionen, wobei manche, wie die lokale Datenspeicherung nicht sichtbar sind. Eine vollständige Abdeckung aller Funktionen wäre nicht sinnvoll, da einige Funktionen lediglich für den Entwickler hilfreich sind und nicht sinnvoll dargestellt werden können.</span></p>
+        <p><span class="text">Ich wünsche Ihnen viel Spaß beim ausprobieren der App.</span></p>
+        <p>&nbsp;</p>
+        <p><span class="text">Freundliche Grüße,</span></p>
+        <p><span class="text">Maximilian Marzeck</span></p>
+      </a>
+
+  <p>&nbsp;</p>
+
+  <nav class="bottomBar">
+      <a class="bar-item passive" href="Index.html">
+        <img class="bar-item-image" src="sources/bilder/noun_Home_3062667.svg"/><br/>
+        <span>Home</span>
+      </a>
+      <a class="bar-item active">
+        <img class="bar-item-image" src="sources/bilder/noun_Info_1933147_active.svg"/><br/>
+        <span>Info</span>
+      </a>
+      </a>
+      <a class="bar-item passive" href="Settings.html">
+        <img class="bar-item-image" src="sources/bilder/noun_Settings_1187769.svg"/><br/>
+        <span>Einstellungen</span>
+      </a>
+    </nav>
+
+    <script>
+        function launchMethod(){
+          if ((nightModeEnabled() == "UI_MODE_NIGHT_YES") || readFile("darkmode") == "true"){
+            document.getElementById("cssMainId").href = 'sources/css/bachelorarbeit_dark.css';
+            callNativeFunction("setStatusBarColor", "black");
+          }
+        }
+        var hammertime = new Hammer(document.getElementById("body"));
+        
+        hammertime.on('swiperight', function(ev) {
+          javaScript:window.location.href = "Index.html";
+        });
+
+        hammertime.on('swipeleft', function(ev) {
+          javaScript:window.location.href = "Settings.html";
+        });
+
+        launchMethod();
+  
+      </script>
+</body>
+</html>
