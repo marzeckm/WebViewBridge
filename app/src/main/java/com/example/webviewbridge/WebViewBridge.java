@@ -481,7 +481,7 @@ public class WebViewBridge {
         public void displayRotationMode(int value){
             if (value == 0) ((Activity) this.context).setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
             else if (value == 1) ((Activity) this.context).setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
-            else ((Activity) this.context).setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_UNSPECIFIED);
+            else ((Activity) this.context).setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_FULL_SENSOR);
         }
 
         @SuppressWarnings("unused")
@@ -739,12 +739,12 @@ class HtmlNode {
     private ArrayList<HtmlNode> childNodes;
 
     @SuppressWarnings("unused")
-    public HtmlNode(String tagName){
+    public HtmlNode(String tagName) {
         standardNode(tagName);
     }
 
     @SuppressWarnings("unused")
-    public HtmlNode(String tagName, String innerHtml){
+    public HtmlNode(String tagName, String innerHtml) {
         standardNode(tagName);
         this.innerHtml = innerHtml;
     }
@@ -772,7 +772,7 @@ class HtmlNode {
 
         if (this.innerHtml.contentEquals("") && this.getChildNodes().size() < 1) {
             temp = temp.concat("/>");
-        }else {
+        } else {
             temp = temp.concat(">" + this.innerHtml);
             for (HtmlNode tempNode : this.childNodes)
                 temp = temp.concat(tempNode.get());
@@ -834,12 +834,12 @@ class HtmlNode {
     }
 
     @SuppressWarnings("unused")
-    public void removeChild(int id){
+    public void removeChild(int id) {
         this.childNodes.remove(id);
     }
 
     @SuppressWarnings("unused")
-    public void removeChild(HtmlNode childNode){
+    public void removeChild(HtmlNode childNode) {
         this.childNodes.remove(childNode);
     }
 
@@ -865,4 +865,3 @@ class HtmlNode {
         return this.getAttribute("class");
     }
 }
-
