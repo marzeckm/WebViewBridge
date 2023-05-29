@@ -45,7 +45,7 @@ Next, add a WebView to your `activity_main.xml` and name it, for example, `webVi
 `js_con = new WebViewBridge(findViewById(R.id.webView1), this);`  
 `js_con.loadUrl("file:///android_asset/index.html");`  
 
-If you want to enable navigation within the WebView using the Back button, add the following function to the `MainActivity.java` file:
+If you want to go back within the WebView using the Back button, add the following function to the `MainActivity.java` file:
 
 `@Override`  
 `public void onBackPressed() {`  
@@ -59,6 +59,7 @@ If you have followed the steps, you can now access some native functions from yo
 `Native.flashlight(boolean)` - Turns the flashlight on or off based on the provided boolean value.
 `Native.getCurrentLocation()` - Returns the current GPS location as a string.
 `Native.showToast(string)` - Displays a native toast message with the content of the string.
+`Native.vibrate(int)` - The device will vibrate for the amount of the integer in milliseconds.
 
 For more functions, feel free to explore the example project in this repository.
 
