@@ -60,6 +60,7 @@ If you have followed the steps, you can now access some native functions from yo
 `Native.getCurrentLocation()` - Returns the current GPS location as a string.
 `Native.showToast(string)` - Displays a native toast message with the content of the string.
 `Native.vibrate(int)` - The device will vibrate for the amount of the integer in milliseconds.
+`Native.vibrateShort()` - The device will vibrate for 100 milliseconds.
 
 For more functions, feel free to explore the example project in this repository.
 
