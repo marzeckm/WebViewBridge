@@ -24,33 +24,41 @@ Alternatively, you can also copy only the `WebViewBridge.java` file from the `ja
 ## Configuration
 If you want to use the project as is and incorporate your changes, simply place your HTML files in the assets folder. It is recommended to name the initially called HTML file as `index.html`. If you only want to use the `WebViewBridge.java` and `hybrid-app.js`, you need to make a few adjustments. First, add the following lines to your `AndroidManifest.xml` file:
 
-`<uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />`  
-`<uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />`  
-`<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />`  
-`<uses-permission android:name="android.permission.POST_NOTIFICATIONS"/>`  
-`<uses-permission android:name="android.permission.INTERNET"/>`  
-`<uses-permission android:name="android.permission.VIBRATE" />`  
-`<uses-permission android:name="android.permission.READ_MEDIA_IMAGES" />`  
-`<uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" android:maxSdkVersion="28" />`  
-`<uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" android:maxSdkVersion="32" />`  
-`<uses-feature android:name="android.hardware.camera" android:required="false" />`  
+```
+<uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+<uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" /> 
+<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />  
+<uses-permission android:name="android.permission.POST_NOTIFICATIONS"/>
+<uses-permission android:name="android.permission.INTERNET"/>
+<uses-permission android:name="android.permission.VIBRATE" /> 
+<uses-permission android:name="android.permission.READ_MEDIA_IMAGES" /> 
+<uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" android:maxSdkVersion="28" /> 
+<uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" android:maxSdkVersion="32" />
+<uses-feature android:name="android.hardware.camera" android:required="false" />
+```
 
 If you also want to access websites or resources in the WebView over the HTTP protocol (without encryption), you need to add the following attribute in the Application tag:
 
-`android:usesCleartextTraffic="true"`
+```
+android:usesCleartextTraffic="true"
+```
 
 Next, add a WebView to your `activity_main.xml` and name it, for example, `webView1`. Then, go to your `ActivityMain.java` and add the following lines:
 
-`private WebViewBridge js_con;`  
-`js_con = new WebViewBridge(findViewById(R.id.webView1), this);`  
-`js_con.loadUrl("file:///android_asset/index.html");`  
+```
+private WebViewBridge js_con;  
+js_con = new WebViewBridge(findViewById(R.id.webView1), this);  
+js_con.loadUrl("file:///android_asset/index.html");
+```
 
 If you want to go back within the WebView using the Back button, add the following function to the `MainActivity.java` file:
 
-`@Override`  
-`public void onBackPressed() {`  
-`    if (!js_con.goBack()) super.onBackPressed();`  
-`}`  
+```
+@Override  
+public void onBackPressed() {  
+    if (!js_con.goBack()) super.onBackPressed();  
+}
+```  
 
 ## Usage
 If you have followed the steps, you can now access some native functions from your HTML code.
