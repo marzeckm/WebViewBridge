@@ -63,15 +63,15 @@ public void onBackPressed() {
 ## Usage
 If you have followed the steps, you can now access some native functions from your HTML code.
 
-`Native.takePhoto()` - Opens the camera and saves the image to the gallery. This function also returns the location of the image as a string.
-`Native.flashlight(boolean)` - Turns the flashlight on or off based on the provided boolean value.
-`Native.getCurrentLocation()` - Returns the current GPS location as a string.
-`Native.showToast(string)` - Displays a native toast message with the content of the string.
-`Native.vibrate(int)` - The device will vibrate for the amount of the integer in milliseconds.
-`Native.vibrateShort()` - The device will vibrate for 100 milliseconds.
-`Native.vibrateMedium()` - The device will vibrate for 200 milliseconds.
-`Native.vibrateLong()` - The device will vibrate for 500 milliseconds.
-`Native.setStatusBarColor()` - Sets the Color of the status bar in the native app.
+`Native.takePhoto()` - Opens the camera and saves the image to the gallery. This function also returns the location of the image as a string.  
+`Native.flashlight(boolean)` - Turns the flashlight on or off based on the provided boolean value.  
+`Native.getCurrentLocation()` - Returns the current GPS location as a string.  
+`Native.showToast(string)` - Displays a native toast message with the content of the string.  
+`Native.vibrate(int)` - The device will vibrate for the amount of the integer in milliseconds.  
+`Native.vibrateShort()` - The device will vibrate for 100 milliseconds.  
+`Native.vibrateMedium()` - The device will vibrate for 200 milliseconds.  
+`Native.vibrateLong()` - The device will vibrate for 500 milliseconds.  
+`Native.setStatusBarColor()` - Sets the Color of the status bar in the native app.  
 
 For more functions, feel free to explore the example project in this repository.
 
